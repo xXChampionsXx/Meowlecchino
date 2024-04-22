@@ -31,7 +31,7 @@ const client = new Client({
 });
 
 client.once("ready", () => {
-  console.log("Discord bot is ready! 🤖");
+  console.log("🐈 Meowlecchino is awake ❌w❌");
 });
 
 /*client.on("guildCreate", async (guild) => {
@@ -99,6 +99,7 @@ client.on(Events.MessageCreate, async (msg) => {
     messages.set(msg.author.id, authorMessages);
 
     if (duplicates >= MAX_DUPLICATES - 1 && averageTime <= MAX_AVERAGE_TIME) {
+      messages.set(msg.author.id, []);
       console.log("SPAM!!!!!!!");
       msg.guild?.members.edit(msg.author, {
         communicationDisabledUntil: new Date(Date.now() + TIMEOUT_AMOUNT),
